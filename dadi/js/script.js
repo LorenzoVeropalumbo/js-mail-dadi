@@ -14,11 +14,23 @@ playBtn.addEventListener('click',
 
     const UserDice = Math.floor(Math.random() * 6) + 1;
     const PcDice =  Math.floor(Math.random() * 6) + 1;
+    const diceResult = document.getElementById('user-dice');
+    const userMessage = document.getElementById('user-message');
 
-    if(UserDice > PcDice){
+    if (UserDice > PcDice) {
       
-      document.getElementById('user-message').innerHTML = `il tuo risultato è ${UserDice} il tuo avversaio ha fatto ${PcDice}`;
-      document.getElementById('user-message').innerHTML = "Email già registrata";
+      diceResult.innerHTML = `il tuo risultato è ${UserDice}   il tuo avversaio ha fatto ${PcDice}`;
+      userMessage.innerHTML = "Hai Vinto";
+
+    } else if (UserDice < PcDice) {
+      
+      diceResult.innerHTML = `il tuo risultato è ${UserDice}   il tuo avversaio ha fatto ${PcDice}`;
+      userMessage.innerHTML = "Hai Perso";
+    }
+    else {
+      
+      diceResult.innerHTML = `il tuo risultato è ${UserDice}   il tuo avversaio ha fatto ${PcDice}`;
+      userMessage.innerHTML = "Parità";
     }
   }
 );
